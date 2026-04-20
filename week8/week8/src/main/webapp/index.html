@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Session Tracking Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .links-section {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Session Tracking and Cookies</h1>
+        <p>This simple application demonstrates HTTP Session and Cookie tracking mechanisms in Java Servlets.</p>
+
+        <!-- Form for HTTP Session Demo -->
+        <form action="LoginServlet" method="POST">
+            <h2>1. HTTP Session Demo</h2>
+            <label for="sessionUser">Enter username to start session:</label><br><br>
+            <input type="text" id="sessionUser" name="username" required>
+            <input type="submit" value="Login (Set Session)">
+            <div class="links-section">
+                <a href="ProfileServlet">Or try to view Profile (Read Session)</a>
+            </div>
+        </form>
+
+        <!-- Form for Cookie Demo -->
+        <form action="SetCookieServlet" method="POST">
+            <h2>2. Cookie Demo</h2>
+            <label for="cookieUser">Enter username to save in cookie:</label><br><br>
+            <input type="text" id="cookieUser" name="username" required>
+            <input type="submit" value="Save (Set Cookie)">
+            <div class="links-section">
+                <a href="ReadCookieServlet">Or try to read Cookie</a>                
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

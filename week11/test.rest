@@ -1,0 +1,45 @@
+### 1. Login to get JWT Token
+# @name login
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "password123"
+}
+
+### Store the token from the response
+@token = {{login.response.body.accessToken}}
+
+### 2. Get All Students (Authorized)
+GET http://localhost:3000/students
+Authorization: Bearer {{token}}
+
+### 3. Get Single Student (Authorized)
+GET http://localhost:3000/students/1
+Authorization: Bearer {{token}}
+
+### 4. Create New Student (Authorized)
+POST http://localhost:3000/students
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "Jane Doe",
+  "age": 22,
+  "grade": "A"
+}
+
+### 5. Update Student (Authorized)
+PUT http://localhost:3000/students/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "age": 22,
+  "grade": "A++"
+}
+
+### 6. Delete Student (Authorized)
+DELETE http://localhost:3000/students/1
+Authorization: Bearer {{token}}

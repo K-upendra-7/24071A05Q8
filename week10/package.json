@@ -1,0 +1,12 @@
+{
+  "name": "week10",
+  "version": "1.0.0",
+  "description": "Express REST API for CRUD operations on student data",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
