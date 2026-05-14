@@ -1,6 +1,14 @@
 <!ELEMENT bookstore (book+)>
-<!ELEMENT book (title, author, price)>
+
+<!-- Allow namespace attributes so DTD doesn't complain -->
+<!ATTLIST bookstore
+    xmlns:xsi CDATA #IMPLIED
+    xsi:noNamespaceSchemaLocation CDATA #IMPLIED>
+
+<!ELEMENT book (title, author, year, price)>
 <!ATTLIST book category CDATA #REQUIRED>
+
 <!ELEMENT title (#PCDATA)>
 <!ELEMENT author (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
 <!ELEMENT price (#PCDATA)>

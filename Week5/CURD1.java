@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class CURD1 {
 
-    static final String DB_URL = "jdbc:oracle:thin:@localhost:1521/XEPDB1";
-    static final String USER = "upendra";
-    static final String PASS = "123456";
+    static final String DB_URL = System.getenv("DB_URL") != null ? System.getenv("DB_URL") : "jdbc:oracle:thin:@localhost:1521/XEPDB1";
+    static final String USER = System.getenv("DB_USER") != null ? System.getenv("DB_USER") : "your_database_user_here";
+    static final String PASS = System.getenv("DB_PASSWORD") != null ? System.getenv("DB_PASSWORD") : "your_database_password_here";
 
     public static void main(String[] args) {
 
